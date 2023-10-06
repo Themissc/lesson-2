@@ -85,11 +85,27 @@ nav ul li:hover a{
   color:red;
 }
 
-footer{
-  background-color:rgb(38, 38, 38);
-  color:#ffffff;
-  text-align: center;
-  padding: 3px;
+
+}
+/*tells the browser to account for any border and padding in */
+/*the values you specify for an element's width and height*/
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 20px;
+}
+
+/* Clear floats after the columns If an element is taller than the */
+/*element containing it, and it is floated, it will overflow outside of its container.*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
@@ -108,7 +124,13 @@ padding: 50px;
 }
 
 }
-
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+    min-height: 400px;
+  }
+}
 /****This is style for mobile****/
 @media screen and (max-width: 600px){
   
@@ -121,3 +143,17 @@ padding: 50px;
 }
   
 }
+
+
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+footer{
+  background-color:rgb(38, 38, 38);
+  color:#ffffff;
+  text-align: center;
+  padding: 3px;
